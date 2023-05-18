@@ -1,5 +1,5 @@
 # Attribution_SpringNA
-Climate drivers of the springtime North America cooling pattern
+Climate drivers of the springtime North America cooling pattern using initial condition large ensemble climate models
 
 ###### Under construction... ```[Python 3.9]```
 
