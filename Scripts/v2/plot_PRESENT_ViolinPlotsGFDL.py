@@ -1,0 +1,144 @@
+"""
+Plot box plots of trends over different time periods compared to all SPEAR/FLOR
+for AGU
+
+Author    : Zachary M. Labe
+Date      : 8 December 2022
+"""
+
+from netCDF4 import Dataset
+import matplotlib.pyplot as plt
+import numpy as np
+import palettable.cubehelix as cm
+import palettable.scientific.sequential as sss
+import palettable.cartocolors.qualitative as cc
+import cmocean as cmocean
+import cmasher as cmr
+import calc_Utilities as UT
+import sys
+import scipy.stats as sts
+
+### Read in data files from server
+plt.rc('text',usetex=True)
+plt.rc('font',**{'family':'sans-serif','sans-serif':['Avant Garde']}) 
+plt.rc('savefig',facecolor='black')
+plt.rc('axes',edgecolor='darkgrey')
+plt.rc('xtick',color='darkgrey')
+plt.rc('ytick',color='darkgrey')
+plt.rc('axes',labelcolor='darkgrey')
+plt.rc('axes',facecolor='black')
+directoryfigure = '/home/Zachary.Labe/Research/Attribution_SpringNA/Figures/v2/Presentations/' 
+directoryoutput = '/home/Zachary.Labe/Research/Attribution_SpringNA/Data/v2/MMLEA/'
+directorydataamip = '/home/Zachary.Labe/Research/Attribution_SpringNA/Data/v2/AMIPs/'
+
+### Parameters
+monthq = ['JAN','FEB','MAR','ARP','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']
+letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n"]
+variq = 'T2M'
+sliceperiod = 'FMA'
+
+### Read in data
+yrmin = 1979
+yrmax = 2020
+trend_obs = np.loadtxt(directoryoutput + 'Slopes_%s_obs_%s-%s.txt' % (sliceperiod,yrmin,yrmax))
+trend_spear = np.loadtxt(directoryoutput + 'Slopes_%s_spear_%s-%s.txt' % (sliceperiod,yrmin,yrmax))
+trend_flor = np.loadtxt(directoryoutput + 'Slopes_%s_FLOR_%s-%s.txt' % (sliceperiod,yrmin,yrmax))
+trend_spearnatural = np.loadtxt(directoryoutput + 'Slopes_%s_natural_%s-%s.txt' % (sliceperiod,yrmin,yrmax))
+trend_amip = np.load(directorydataamip + 'AMIP_onlySPEAR_Trends_%s_T2M.npz' % sliceperiod,allow_pickle=True)['trend'][0][0][0]
+
+### Calculate decadal trend
+decobs = trend_obs * 10
+decspear = trend_spear * 10
+decflor= trend_flor * 10
+decspearnatural = trend_spearnatural * 10
+decamip = trend_amip * 10
+
+###############################################################################
+###############################################################################
+###############################################################################               
+### Plot Figure
+### Adjust axes in time series plots 
+def adjust_spines(ax, spines):
+    for loc, spine in ax.spines.items():
+        if loc in spines:
+            spine.set_position(('outward', 5))
+        else:
+            spine.set_color('none')  
+    if 'left' in spines:
+        ax.yaxis.set_ticks_position('left')
+    else:
+        ax.yaxis.set_ticks([])
+
+    if 'bottom' in spines:
+        ax.xaxis.set_ticks_position('bottom')
+    else:
+        ax.xaxis.set_ticks([]) 
+
+fig = plt.figure(figsize=(6,6))
+axb = plt.subplot(111)
+
+axb.spines['top'].set_color('none')
+axb.spines['right'].set_color('none')
+axb.spines['left'].set_color('none')
+axb.spines['bottom'].set_color('none')
+axb.tick_params('both',length=4,width=1,which='major',color='darkgrey')
+axb.yaxis.grid(zorder=1,color='darkgrey',alpha=1,linewidth=1,clip_on=False)
+plt.axvline(x=0,color='darkgrey',linestyle='-',linewidth=1,zorder=1)
+
+datum = [decamip,decspear,decflor,decspearnatural]
+
+vp = plt.violinplot(datum,showmeans=False,showmedians=True,
+                    vert=False,widths=0.9,showextrema=True)
+plt.axvline(decobs,color='crimson',linestyle='--',dashes=(1,0.3),linewidth=3)
+plt.setp(axb,yticks=[y+1 for y in range(len(datum))],
+                     yticklabels=[r'\textbf{SPEAR_MED_AMIP (30)}',r'\textbf{SPEAR_MED_LE (30)}',r'\textbf{FLOR_LE (30)}',r'\textbf{SPEAR_MED_NATURAL (30)}'])
+
+positionsq = np.array(np.arange(1,6,1))
+for i in range(len(datum)):
+    y = datum[i]
+    x = np.random.normal(positionsq[i], 0.02, size=len(y))
+    plt.plot(y,x,color='k',alpha=0.5,zorder=10,marker='.',linewidth=0,markersize=15,markeredgewidth=0,clip_on=False)
+                     
+for i in vp['bodies']:
+    i.set_edgecolor('w')  
+vp['cbars'].set_color('w')
+vp['cmaxes'].set_color('w')
+vp['cmins'].set_color('w')
+vp['cmedians'].set_color('w')
+vp['cmedians'].set_linewidth(5)
+vp['cmaxes'].set_linewidth(5)        
+vp['cmins'].set_linewidth(5)       
+vp['cmaxes'].set_linestyle('-')        
+vp['cmins'].set_linestyle('-')          
+
+color = cmr.ghostlight(np.linspace(0.3,1,len(datum)-1))
+for i,c in zip(range(len(datum)-1),color):       
+    vp['bodies'][i].set_facecolor(c) 
+vp['bodies'][3].set_facecolor('dodgerblue')    
+vp['bodies'][0].set_alpha(1)
+vp['bodies'][1].set_alpha(1)  
+vp['bodies'][2].set_alpha(1) 
+vp['bodies'][3].set_alpha(1)   
+
+plt.xticks(np.arange(-5,5.01,0.5),map(str,np.arange(-5,5.01,0.5)),rotation=0)
+plt.xlim([-0.5,1.2])  
+plt.xlabel(r'\textbf{T2M Trends [$^{\circ}$C/Decade] for April %s-%s}' % (yrmin,yrmax),
+           color='w',size=13,rotation=0)
+
+axb.xaxis.set_ticks_position('bottom')
+axb.yaxis.set_ticks_position('left')
+
+plt.text(decobs,4.8,r'\textbf{ERA5}',size=11,color='crimson',ha='center',va='center',
+         rotation=0)
+
+plt.yticks(rotation=270,va='center',fontsize=7.2,color='w') 
+
+plt.tight_layout()
+plt.savefig(directoryfigure + 'PRESENT_TrendViolins_GFDL_%s_%s-%s.png' % (sliceperiod,yrmin,yrmax),dpi=300)
+
+
+
+
+
+
+
