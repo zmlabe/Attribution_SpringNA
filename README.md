@@ -19,6 +19,8 @@ Zachary Labe - [Research Website](http://sites.uci.edu/zlabe/) - [@ZLabe](https:
     + Rodgers, K. B., Lee, S. S., Rosenbloom, N., Timmermann, A., Danabasoglu, G., Deser, C., ... & Yeager, S. G. (2021). Ubiquity of human-induced changes in climate variability. Earth System Dynamics Discussions, 1-22, doi:10.1175/BAMS-D-13-00255.1 [[PUBLICATION]](https://esd.copernicus.org/preprints/esd-2021-50/)
 + ERA5 : [[DATA]](https://cds.climate.copernicus.eu/cdsapp#!/home)
     + Hersbach, H., Bell, B., Berrisford, P., Hirahara, S., Horányi, A., Muñoz‐Sabater, J., ... & Simmons, A. (2020). The ERA5 global reanalysis. Quarterly Journal of the Royal Meteorological Society, doi:10.1002/qj.3803 [[PUBLICATION]](https://rmets.onlinelibrary.wiley.com/doi/full/10.1002/qj.3803)
++ GISTEMPv4 : [[DATA]](https://data.giss.nasa.gov/gistemp/)
+    + Lenssen, N., G. Schmidt, J. Hansen, M. Menne, A. Persin, R. Ruedy, and D. Zyss, 2019: Improvements in the GISTEMP uncertainty model. J. Geophys. Res. Atmos., 124, no. 12, 6307-6326, doi:10.1029/2018JD029522.[[PUBLICATION]](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2018JD029522)
 + GFDL FLOR: Forecast-oriented Low Ocean Resolution : [[DATA]](https://www.gfdl.noaa.gov/cm2-5-and-flor/)
     + Vecchi, G. A., Delworth, T., Gudgel, R., Kapnick, S., Rosati, A., Wittenberg, A. T., ... & Zhang, S. (2014). On the seasonal forecasting of regional tropical cyclone activity. Journal of Climate, 27(21), 7994-8016. doi:10.1175/JCLI-D-14-00158.1 [[PUBLICATION]](https://journals.ametsoc.org/view/journals/clim/27/21/jcli-d-14-00158.1.xml)
 + GFDL SPEAR: Seamless System for Prediction and EArth System Research : [[DATA]](https://www.gfdl.noaa.gov/spear_large_ensembles/)
@@ -27,8 +29,12 @@ Zachary Labe - [Research Website](http://sites.uci.edu/zlabe/) - [@ZLabe](https:
     + Deser, C., Phillips, A. S., Simpson, I. R., Rosenbloom, N., Coleman, D., Lehner, F., ... & Stevenson, S. (2020). Deser, C., Lehner, F., Rodgers, K. B., Ault, T., Delworth, T. L., DiNezio, P. N., ... & Ting, M. (2020). Insights from Earth system model initial-condition large ensembles and future prospects. Nature Climate Change, 1-10. doi:10.1038/s41558-020-0731-2 [[PUBLICATION]](https://www.nature.com/articles/s41558-020-0731-2)
 + Sixth Version of Model for Interdisciplinary Research on Climate (MIROC6) : [[DATA]](https://climexp.knmi.nl/selectfield_cmip6.cgi?id=someone@somewhere)
     + Tatebe, H., Ogura, T., Nitta, T., Komuro, Y., Ogochi, K., Takemura, T., ... & Kimoto, M. (2019). Description and basic evaluation of simulated mean state, internal variability, and climate sensitivity in MIROC6. Geoscientific Model Development, 12(7), 2727-2765. doi:10.5194/gmd-12-2727-2019 [[PUBLICATION]](https://gmd.copernicus.org/articles/12/2727/2019/gmd-12-2727-2019.html)
++ NCEP/DOE Reanalysis II : [[DATA]](https://psl.noaa.gov/data/gridded/data.ncep.reanalysis2.html)
+    + NCEP-DOE AMIP-II Reanalysis (R-2): M. Kanamitsu, W. Ebisuzaki, J. Woollen, S-K Yang, J.J. Hnilo, M. Fiorino, and G. L. Potter. 1631-1643, Nov 2002, Bulletin of the American Meteorological Society. doi:10.1175/BAMS-83-11-1631 [[PUBLICATION]](https://journals.ametsoc.org/view/journals/bams/83/11/bams-83-11-1631.xml)
 + NOAA-CIRES-DOE Twentieth Century Reanalysis (20CRv3) : [[DATA]](https://psl.noaa.gov/data/gridded/data.20thC_ReanV3.html)
     + Slivinski, L. C., Compo, G. P., Whitaker, J. S., Sardeshmukh, P. D., Giese, B. S., McColl, C., ... & Wyszyński, P. (2019). Towards a more reliable historical reanalysis: Improvements for version 3 of the Twentieth Century Reanalysis system. Quarterly Journal of the Royal Meteorological Society, 145(724), 2876-2908. doi:10.1002/qj.3598 [[PUBLICATION]](https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.3598)
++ NOAA Merged Land Ocean Global Surface Temperature Analysis (NOAAGlobalTemp v5.1) : [[DATA]](https://www.ncei.noaa.gov/data/noaa-global-surface-temperature/v5.1/access/gridded/)
+    + Vose, R.S., B. Huang, X. Yin., D. Arndt, D.R. Easterling, J.H. Lawrimore, M.J. Menne, A. Sanchez-Lugo, H.-M. Zhang, 2021: Implementing full spatial coverage in NOAA’s global temperature analysis. Geophysical Research Letters, 48, e2020GL090873. doi:10.1029/2020GL090873 [[PUBLICATION]](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020GL090873)
 
 ## Publications
 
