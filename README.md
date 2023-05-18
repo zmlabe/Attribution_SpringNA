@@ -43,6 +43,8 @@ model. Biogeosciences, 12(11), 3301–3320. https://doi.org/10.5194/BG-12-3301-2
     + Slivinski, L. C., Compo, G. P., Whitaker, J. S., Sardeshmukh, P. D., Giese, B. S., McColl, C., ... & Wyszyński, P. (2019). Towards a more reliable historical reanalysis: Improvements for version 3 of the Twentieth Century Reanalysis system. Quarterly Journal of the Royal Meteorological Society, 145(724), 2876-2908. doi:10.1002/qj.3598 [[PUBLICATION]](https://rmets.onlinelibrary.wiley.com/doi/10.1002/qj.3598)
 + NOAA Merged Land Ocean Global Surface Temperature Analysis (NOAAGlobalTemp v5.1) : [[DATA]](https://www.ncei.noaa.gov/data/noaa-global-surface-temperature/v5.1/access/gridded/)
     + Vose, R.S., B. Huang, X. Yin., D. Arndt, D.R. Easterling, J.H. Lawrimore, M.J. Menne, A. Sanchez-Lugo, H.-M. Zhang, 2021: Implementing full spatial coverage in NOAA’s global temperature analysis. Geophysical Research Letters, 48, e2020GL090873. doi:10.1029/2020GL090873 [[PUBLICATION]](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020GL090873)
++ SMHI Large Ensemble (SMHI-LENS) : [[DATA]](https://esgf-node.llnl.gov/search/cmip6/)
+    + Wyser, K., Koenigk, T., Fladrich, U., Fuentes-Franco, R., Karami, M. P., & Kruschke, T. (2021). The SMHI large ensemble (SMHI-lens) with EC-Earth3. 3.1. Geoscientific Model Development, 14(7), 4781-4796. doi:10.5194/gmd-14-4781-2021 [[PUBLICATION]](https://gmd.copernicus.org/articles/14/4781/2021/)
 
 ## Publications
 
